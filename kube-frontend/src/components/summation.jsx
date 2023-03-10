@@ -40,9 +40,8 @@ class Summation extends Component {
                 
                 <div className ="card" style={{width: "18rem"}}>
                   <div className ="card-body">
-                    <h5 className ="card-title">Summation</h5>
-                    <h6 className ="card-subtitle mb-2 text-muted">Click kore dekhe nao magic</h6>
-                    <p className ="card-text">{this.state.sumNum?this.state.sumNum:""}</p>
+                    <h5 className ="card-title">Account Balance (TK) </h5>
+                    <p className ="card-text">{this.state.sumNum?this.state.sumNum:""} </p>
                   </div>
                 </div>
 
