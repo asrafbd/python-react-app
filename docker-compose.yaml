@@ -1,0 +1,18 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: ./kube-frontend
+      dockerfile: Dockerfile
+    image: kube-frontend:v1
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+  backend:
+    build:
+      context: ./kube-backend
+      dockerfile: Dockerfile
+    image: kube-backend:v1
+    ports:
+      - 5000:5000

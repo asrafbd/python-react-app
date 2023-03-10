@@ -1,0 +1,56 @@
+[root@k8s-master01 kube-frontend]# docker build -t kube-frontend:v1 .
+
+[root@k8s-master01 kube-backend]# docker build -t kube-backend:v1 .
+
+
+vi docker-compose.yaml
+
+version: "3"
+services:
+  frontend:
+    image: kube-frontend:v1
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+  backend:
+    image: kube-backend:v1
+    ports:
+      - 5000:5000
+
+
+[root@k8s-master01 two-tier-demo-main]# docker-compose up -d
+
+http://192.168.30.5
+
+[root@k8s-master01 two-tier-demo-main]# docker-compose down
+
+
+
+vi docker-compose.yaml
+
+version: "3"
+services:
+  frontend:
+    build:
+      context: ./kube-frontend
+      dockerfile: Dockerfile
+    image: kube-frontend:v1
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+  backend:
+    build:
+      context: ./kube-backend
+      dockerfile: Dockerfile
+    image: kube-backend:v1
+    ports:
+      - 5000:5000
+
+
+[root@k8s-master01 two-tier-demo-main]# docker-compose up --build -d
+
+
+http://192.168.30.5
+
