@@ -14,7 +14,7 @@ class Reverser extends Component {
     }
 
     handleSubmit=()=>{
-        axios.post(`/reverser`, this.state)
+        axios.post('/reverser', this.state)
         .then(res => {
           this.setState({reverseNum:res.data.num})
         })
@@ -32,15 +32,14 @@ class Reverser extends Component {
                             className="form-control" 
                             id="number" 
                             onChange={this.handleChange} 
-                            placeholder="1234"/>
+                            placeholder="Your Phone Number"/>
                     </div>
                   <button type="button" className="btn btn-primary mb-2" onClick={this.handleSubmit}>submit</button>
                 </form>
                 
                 <div className ="card" style={{width: "18rem"}}>
                   <div className ="card-body">
-                    <h5 className ="card-title">Reverse Number</h5>
-                    <h6 className ="card-subtitle mb-2 text-muted">Click kore dekhe nao magic</h6>
+                    <h5 className ="card-title">Your Name</h5>
                     <p className ="card-text">{this.state.reverseNum?this.state.reverseNum:""}</p>
                   </div>
                 </div>
