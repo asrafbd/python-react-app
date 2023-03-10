@@ -14,12 +14,13 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: asrafbd/react-frontend:v1
+        #image: asrafbd/react-frontend:v1
+        image: amdadulbari/optmizers:frontendv3
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-      #imagePullSecrets:
-      #- name: dockerhub
+      imagePullSecrets:
+      - name: amdadul-reg-cred
 
 
 

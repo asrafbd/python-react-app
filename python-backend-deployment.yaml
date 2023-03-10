@@ -16,10 +16,14 @@ spec:
     spec:
       containers:
       - name: python-backend-service
-        image: asrafbd/python-backend:v1
+        #image: asrafbd/python-backend:v1
+        image: amdadulbari/optmizers:backendv2
         imagePullPolicy: Always
-      #imagePullSecrets:
-      #- name: dockerhub
+        envFrom:
+        - secretRef:
+            name: db-secrets
+      imagePullSecrets:
+      - name: amdadul-reg-cred
 
 
 
