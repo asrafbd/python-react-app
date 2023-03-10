@@ -18,6 +18,9 @@ spec:
       - name: python-backend-service
         image: asrafbd/python-backend:v1
         imagePullPolicy: Always
+      #imagePullSecrets:
+      #- name: dockerhub
+
 
 
 ---
